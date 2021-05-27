@@ -12,7 +12,7 @@ dateTime = datetime.datetime.fromtimestamp(time)
 print(dateTime)
 
 cntItem = 0
-
+print(kw_list)
 for item in kw_list:
   url = item
   nowDateTime = datetime.datetime.fromtimestamp(time)
@@ -20,5 +20,5 @@ for item in kw_list:
   cntItem += 1
   print(str(cntItem)+"個目")
   print("ダウンロード中...")
-  yt.streams.filter(progressive=True, file_extension='mp4').order_by('resolution').desc().first().download('./download/'+str(dateTime),str(nowDateTime))
+  yt.streams.filter(progressive=True, file_extension='mp4').order_by('resolution').desc().first().download('./download/'+str(dateTime),"Video_"+str(cntItem))
   print("ダウンロード完")
